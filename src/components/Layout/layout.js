@@ -1,7 +1,9 @@
+import Header from "../Header/header";
+
 export default function Layout({ children }) {
   return (
     <>
-      <nav></nav>
+      <Header/>
       <main>{children}</main>
       <footer></footer>
     </>
