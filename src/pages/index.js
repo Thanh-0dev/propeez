@@ -9,7 +9,7 @@ export default function Home() {
         <title>Home</title>
       </Head>
       <Layout>
-          <InteractiveMap/>
+        <InteractiveMap />
       </Layout>
     </>
   );
