@@ -1,4 +1,4 @@
-import '@/pages/globals.css';
+import '@/globals.css';
 import Head from 'next/head';
 import { SessionProvider } from 'next-auth/react';
 
