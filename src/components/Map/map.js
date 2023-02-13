@@ -13,7 +13,7 @@ export default function InteractiveMap({}) {
         latitude: 47,
         zoom: 5,
         bearing: 0,
-        pitch: 0
+        pitch: 0,
       }}
       style={{ width: "100vw", height: "100vh" }}
       mapStyle="mapbox://styles/mapbox/light-v11"
