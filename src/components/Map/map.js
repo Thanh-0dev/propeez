@@ -52,7 +52,7 @@ export default function InteractiveMap({}) {
     <Map
       initialViewState={initViewport}
       style={{ width: "100vw", height: "100vh" }}
-      mapStyle="mapbox://styles/mapbox/light-v11"
+      mapStyle="mapbox://styles/mapbox/streets-v12"
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN}
     >
       <GeolocateControl position="top-left" />
