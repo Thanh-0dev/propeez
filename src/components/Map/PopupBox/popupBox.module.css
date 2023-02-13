@@ -1,0 +1,17 @@
+.title{
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.popupContainer p{
+  margin-top: 10px;
+}
+
+.image{
+  border-radius: 5px;
+  object-fit: cover;
+  margin-bottom: 5px;
+  width: 100%;
+}
