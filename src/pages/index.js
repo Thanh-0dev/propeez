@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Layout from "@/components/Layout/layout";
+import InteractiveMap from "@/components/Map/map";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
         <title>Home</title>
       </Head>
       <Layout>
-        <main></main>
+          <InteractiveMap/>
       </Layout>
     </>
   );
