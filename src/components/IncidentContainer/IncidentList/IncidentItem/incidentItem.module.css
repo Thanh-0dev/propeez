@@ -1,0 +1,15 @@
+.incident_item{
+  border: 2px #ededed solid;
+  border-radius: 5px 0px 0px 5px;
+  padding: 25px;
+}
+
+.title{
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.incident_item *:not(:first-child, :last-child){
+  margin-bottom: 10px;
+}

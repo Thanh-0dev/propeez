@@ -7,10 +7,9 @@ import Map, {
   GeolocateControl,
 } from "react-map-gl";
 import Pin from "./Pin/pin";
-import data from "./data.json";
 import PopupBox from "./PopupBox/popupBox";
 
-export default function InteractiveMap({}) {
+export default function InteractiveMap({data}) {
   const [viewport, setViewport] = useState({
     longitude: 2,
     latitude: 47,
@@ -51,7 +50,7 @@ export default function InteractiveMap({}) {
   return (
     <Map
       initialViewState={initViewport}
-      style={{ width: "100vw", height: "100vh" }}
+      style={{ width: "50%"}}
       mapStyle="mapbox://styles/mapbox/streets-v12"
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN}
     >
