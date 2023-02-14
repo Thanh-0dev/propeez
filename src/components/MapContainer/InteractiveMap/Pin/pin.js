@@ -3,7 +3,7 @@ const pinStyle = {
   stroke: "none",
 };
 
-export default function Pin({ size = 20, color = "#313131" }) {
+export default function Pin({ size = 20, color = "#313131", pinActive }) {
   return (
     <svg height={size} viewBox="0 0 24 24" style={pinStyle}>
       <circle cx="12" cy="12" r="12" fill={color} />

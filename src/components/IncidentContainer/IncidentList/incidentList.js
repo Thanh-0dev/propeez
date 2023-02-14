@@ -1,11 +1,11 @@
 import IncidentItem from "./IncidentItem/incidentItem";
 import styles from "./incidentList.module.css";
 
-export default function IncidentList({ data }) {
+export default function IncidentList({ data, setIncidentInfo }) {
   return (
     <div className={styles.incident_list}>
       {data.map((item, key) => {
-        return <IncidentItem item={item} key={key} />;
+        return <IncidentItem item={item} key={key} setIncidentInfo={setIncidentInfo} />;
       })}
     </div>
   );
