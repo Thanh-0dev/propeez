@@ -1,8 +1,11 @@
+import Header from "../Header/header";
+import styles from "./layout.module.css";
+
 export default function Layout({ children }) {
   return (
     <>
-      <nav></nav>
-      <main>{children}</main>
+      <Header/>
+      <main className={styles.main}>{children}</main>
       <footer></footer>
     </>
   );

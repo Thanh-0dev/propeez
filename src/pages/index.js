@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "@/components/Layout/layout";
-import InteractiveMap from "@/components/Map/map";
+import MapContainer from "@/components/MapContainer/mapContainer";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         <title>Home</title>
       </Head>
       <Layout>
-          <InteractiveMap/>
+        <MapContainer/>
       </Layout>
     </>
   );
