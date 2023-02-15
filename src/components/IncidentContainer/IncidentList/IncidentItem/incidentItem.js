@@ -1,24 +1,29 @@
 import styles from "./incidentItem.module.css";
+import InfoBox from "@/components/InfoBox/infoBox";
 
 export default function IncidentItem({
   item,
   id,
   setIncidentInfo,
   setHoverInfo,
+  incidentContainerRef,
 }) {
   return (
     <div
       key={id}
       className={styles.incident_item}
-      onClick={() => setIncidentInfo(item)}
+      onClick={() => {
+        incidentContainerRef.current.scrollTop = 0;
+        setIncidentInfo(item);
+      }}
       onMouseOver={() => setHoverInfo(item)}
       onMouseLeave={() => setHoverInfo(null)}
     >
       <h3 className={styles.title}>{item.title}</h3>
       <p>
-        Du {item.startDate} au {item.endDate}
+        {item.startDate} - {item.endDate}
       </p>
-      <p>Lieu : {item.address}</p>
+      <InfoBox>{item.address}</InfoBox>
     </div>
   );
 }

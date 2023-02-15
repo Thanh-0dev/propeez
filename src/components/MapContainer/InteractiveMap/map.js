@@ -28,7 +28,7 @@ export default function InteractiveMap({ pins }) {
   return (
     <Map
       initialViewState={initViewport}
-      style={{ width: "50%" }}
+      style={{ width: "100%" }}
       mapStyle="mapbox://styles/mapbox/streets-v12"
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN}
     >
