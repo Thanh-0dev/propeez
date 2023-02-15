@@ -1,7 +1,7 @@
 [
   {
     "title": "Lampadaire tombé sur la route",
-    "description": "Lampadaire tombé le long de la Rue Caulaincourt dû à un vent violent la nuit précédente.",
+    "description": "Lampadaire tombé le long de la Rue Caulaincourt dû à un vent violent la nuit précédente. La route est par conséquent coupée car le lampadaire est tombé le long de la chaussée.",
     "address": "10 Rue Caulaincourt, 75018",
     "startDate": "13/02/2023",
     "endDate": "18/02/2023",
@@ -12,7 +12,7 @@
   },
   {
     "title": "Travaux sur la chaussée",
-    "description": "Travaux en cours sur la Rue de Rivoli, circulation perturbée.",
+    "description": "Travaux en cours sur la Rue de Rivoli pour la mise à niveau de la distribution de l'eau courante dans le quartier. La circulation est perturbée et des ralentissements peuvent survenir par moment dans la journée.",
     "address": "120 Rue de Rivoli, 75001",
     "startDate": "13/02/2023",
     "endDate": "20/02/2023",
@@ -23,7 +23,7 @@
   },
   {
     "title": "Fuite d'eau",
-    "description": "Fuite d'eau au niveau de la Rue de la Pompe, risque d'inondation.",
+    "description": "Fuite d'eau au niveau de la Rue de la Pompe, risque d'inondation. Un périmètre de sécurité a été mis en place autour de la fuite afin d'éviter d'éventuels accidents de piétons ou de véhicules.",
     "address": "75 Rue de la Pompe, 75116",
     "startDate": "12/02/2023",
     "endDate": "17/02/2023",
@@ -34,7 +34,7 @@
   },
   {
     "title": "Panne électrique",
-    "description": "Panne électrique dans la Rue des Petits Champs, éclairage public hors service.",
+    "description": "Panne électrique dans la Rue des Petits Champs, éclairage public hors service. Pour la sécurité des usagers, la rue a été fermée pour éviter tout accident ",
     "address": "10 Rue des Petits Champs, 75001",
     "startDate": "11/02/2023",
     "endDate": "15/02/2023",
@@ -45,7 +45,7 @@
   },
   {
     "title": "Route en travaux",
-    "description": "Travaux de rénovation de la route de la Rue de la Roquette, circulation perturbée.",
+    "description": "Travaux de rénovation de la route de la Rue de la Roquette, circulation perturbée. La route n'était plus apte à accueillir des véhicules et des travaux étaient nécéssaires.",
     "address": "42 Rue de la Roquette, 75011",
     "startDate": "14/02/2023",
     "endDate": "23/02/2023",
@@ -56,7 +56,7 @@
   },
   {
     "title": "Fuite de gaz",
-    "description": "Fuite de gaz détectée dans la Rue du Cherche-Midi, évacuation en cours.",
+    "description": "Fuite de gaz détectée dans la Rue du Cherche-Midi, évacuation en cours. La fuite a été déclarée à 8h pour un début d'évacuation à 8h45. Le processus devrait prendre 5 heures.",
     "address": "120 Rue du Cherche-Midi, 75006",
     "startDate": "13/02/2023",
     "endDate": "16/02/2023",
@@ -67,7 +67,7 @@
   },
   {
     "title": "Arbre tombé",
-    "description": "Arbre tombé sur la voie publique Rue de Belleville, risque d'accident.",
+    "description": "Arbre tombé sur la voie publique Rue de Belleville, risque d'accident. L'arbre est tombé dû aux vents violents de la nuit dernière.",
     "address": "147 Rue de Belleville, 75019",
     "startDate": "12/02/2023",
     "endDate": "16/02/2023",
@@ -78,7 +78,7 @@
   },
   {
     "title": "Canalisation d'eau cassée",
-    "description": "Canalisation d'eau cassée Rue de la Convention, risque d'inondation.",
+    "description": "Canalisation d'eau cassée Rue de la Convention, risque d'inondation. Un chien a troué un des tuyaux, ce qui a provoqué une fuite.",
     "address": "85 Rue de la Convention, 75015",
     "startDate": "10/02/2023",
     "endDate": "13/02/2023",
@@ -89,7 +89,7 @@
   },
   {
     "title": "Déjections canines non ramassées",
-    "description": "Nombreuses déjections canines non ramassées Rue de Passy, risque de salubrité publique.",
+    "description": "Nombreuses déjections canines non ramassées Rue de Passy, risque de salubrité publique. Pour le bien-être des habitants du quartier, une opération de nettoyage est en cours.",
     "address": "62 Rue de Passy, 75016",
     "startDate": "14/02/2023",
     "endDate": "18/02/2023",
@@ -100,7 +100,7 @@
   },
   {
     "title": "Débris de verre sur la chaussée",
-    "description": "Débris de verre sur la chaussée Avenue de Clichy, risque de danger pour les piétons.",
+    "description": "Débris de verre sur la chaussée Avenue de Clichy, risque de danger pour les piétons. Une énorme vitre a éclaté la nuit précédente ce qui a causé de nombreux débris de verre.",
     "address": "177 Avenue de Clichy, 75017",
     "startDate": "13/02/2023",
     "endDate": "16/02/2023",
@@ -111,7 +111,7 @@
   },
   {
     "title": "Déjections canines non ramassées",
-    "description": "Nombreuses déjections canines non ramassées Rue de Passy, risque de salubrité publique.",
+    "description": "Nombreuses déjections canines non ramassées Rue de Passy, risque de salubrité publique. Pour le bien-être des habitants du quartier, une opération de nettoyage est en cours.",
     "address": "62 Rue de Passy, 75016",
     "startDate": "14/02/2023",
     "endDate": "18/02/2023",
@@ -122,7 +122,7 @@
   },
   {
     "title": "Débris de verre sur la chaussée",
-    "description": "Débris de verre sur la chaussée Avenue de Clichy, risque de danger pour les piétons.",
+    "description": "Débris de verre sur la chaussée Avenue de Clichy, risque de danger pour les piétons. Cet incident est causé par les personnes qui laissent trainer leur déchet sans les mettre dans des poubelles.",
     "address": "177 Avenue de Clichy, 75017",
     "startDate": "13/02/2023",
     "endDate": "16/02/2023",
@@ -133,7 +133,7 @@
   },
   {
     "title": "Graffitis sur les vitrines",
-    "description": "Nombreux graffitis sur les vitrines de la Rue de Charonne, besoin de nettoyage.",
+    "description": "Nombreux graffitis sur les vitrines de la Rue de Charonne, besoin de nettoyage. Des vitrines ont été taguées avec des termes mesquins, un nettoyage est nécessaire.",
     "address": "51 Rue de Charonne, 75011",
     "startDate": "12/02/2023",
     "endDate": "15/02/2023",
@@ -144,7 +144,7 @@
   },
   {
     "title": "Déchets dans le square",
-    "description": "Déchets abandonnés dans le square du Quai de la Loire, risque de prolifération de rats.",
+    "description": "Déchets abandonnés dans le square du Quai de la Loire, risque de prolifération de rats. Les parcs sont très prisés des rats, laisser des déchets à l'abandon de la sorte est un risque pour la population.",
     "address": "Quai de la Loire, 75019",
     "startDate": "11/02/2023",
     "endDate": "14/02/2023",
