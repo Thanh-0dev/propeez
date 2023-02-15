@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import InteractiveMap from "./InteractiveMap/map";
 import IncidentContainer from "../IncidentContainer/incidentContainer";
 import Pin from "./InteractiveMap/Pin/pin";
@@ -9,6 +9,16 @@ import data from "./data.json";
 export default function MapContainer() {
   const [incidentInfo, setIncidentInfo] = useState(null);
   const [hoverInfo, setHoverInfo] = useState(null);
+  const [viewport, setViewport] = useState(null);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      setViewport({
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      });
+    });
+  }, []);
 
   const pins = useMemo(
     () =>
@@ -29,20 +39,27 @@ export default function MapContainer() {
       )),
     [hoverInfo]
   );
-  return (
-    <div className={styles.map_container}>
-      <IncidentContainer
-        data={data}
-        incidentInfo={incidentInfo}
-        setIncidentInfo={setIncidentInfo}
-        setHoverInfo={setHoverInfo}
-      />
-      <InteractiveMap
-        data={data}
-        pins={pins}
-        incidentInfo={incidentInfo}
-        setIncidentInfo={setIncidentInfo}
-      />
-    </div>
-  );
+
+  if(viewport){
+    return (
+      <div className={styles.map_container}>
+        <IncidentContainer
+          data={data}
+          incidentInfo={incidentInfo}
+          setIncidentInfo={setIncidentInfo}
+          setHoverInfo={setHoverInfo}
+        />
+        <InteractiveMap
+          data={data}
+          viewport={viewport}
+          pins={pins}
+          incidentInfo={incidentInfo}
+          setIncidentInfo={setIncidentInfo}
+        />
+      </div>
+    );
+  }
+  return(
+    <h1>Veuillez activer votre géolocalisation</h1>
+  )
 }
