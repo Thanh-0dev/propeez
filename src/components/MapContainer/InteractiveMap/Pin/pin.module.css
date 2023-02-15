@@ -1,0 +1,12 @@
+.pin, .pin:hover{
+  transition: 0.2s all ease-in;
+}
+
+.pin.active circle:last-child, .pin circle:last-child:hover{
+  fill: red;
+}
+
+.pin.active, .pin:hover{
+  transform: scale(1.7);
+  transition: 0.2s all ease-in;
+}

@@ -2,14 +2,27 @@ import IncidentList from "./IncidentList/incidentList";
 import styles from "./incidentContainer.module.css";
 import Image from "next/image";
 
-export default function IncidentContainer({ data, incidentInfo, setIncidentInfo }) {
+export default function IncidentContainer({
+  data,
+  incidentInfo,
+  setIncidentInfo,
+  setHoverInfo,
+}) {
   const nIncident = data.length;
 
   return (
     <div className={styles.incident_container}>
       {incidentInfo ? (
         <>
-          <button onClick={() => setIncidentInfo(null)}>close</button>
+          <button
+            className={styles.close_button}
+            onClick={() => {
+              setIncidentInfo(null);
+              setHoverInfo(null);
+            }}
+          >
+            X
+          </button>
           <h2 className={styles.title}>{incidentInfo.title}</h2>
           <Image
             src="/default.jpg"
@@ -35,7 +48,11 @@ export default function IncidentContainer({ data, incidentInfo, setIncidentInfo 
             <span className={styles.num}>{nIncident}</span> incidents déclarés
             dans votre zone
           </h2>
-          <IncidentList data={data} setIncidentInfo={setIncidentInfo} />
+          <IncidentList
+            data={data}
+            setIncidentInfo={setIncidentInfo}
+            setHoverInfo={setHoverInfo}
+          />
         </>
       )}
     </div>
