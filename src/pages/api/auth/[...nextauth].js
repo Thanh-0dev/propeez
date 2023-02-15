@@ -11,5 +11,11 @@ export default NextAuth({
 			clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 		}),
 	],
+	callbacks: {
+		async session({ session, token, user }) {
+			session.user.role = user.role;
+			return session;
+		},
+	},
 	secret: process.env.JWT_SECRET,
 });

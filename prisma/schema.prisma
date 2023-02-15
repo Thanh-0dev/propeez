@@ -43,6 +43,10 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
+  role          String?   @default("USER")
+  firstName     String?
+  lastName      String?
+  city          String?
   accounts      Account[]
   sessions      Session[]
 }
@@ -53,4 +57,35 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Category {
+  id        String     @id @default(cuid())
+  type      String
+  incidents Incident[]
+}
+
+model Incident {
+  id          String    @id @default(cuid())
+  title       String
+  description String
+  adress      String
+  city        String
+  startDate   String
+  endDate     String?
+  image       Image?
+  latitude    Float
+  longitude   Float
+  category    Category? @relation(fields: [categoryId], references: [id])
+  categoryId  String?
+  published   Boolean   @default(false)
+}
+
+model Image {
+  id         String    @id @default(cuid())
+  publicId   String    @unique
+  format     String
+  version    String
+  incident   Incident? @relation(fields: [incidentId], references: [id])
+  incidentId String?   @unique
 }

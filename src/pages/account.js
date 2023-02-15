@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSession, getSession } from 'next-auth/react';
+import { useSession, signIn, signOut, getSession } from 'next-auth/react';
 
 export default function Account() {
 	const { data: session } = useSession();
@@ -9,12 +9,6 @@ export default function Account() {
 			<div>
 				<h1>Logged in</h1>
 				<button onClick={() => signOut()}>Sign out</button>
-			</div>
-		);
-	} else {
-		return (
-			<div>
-				<h1>Not logged in</h1>
 			</div>
 		);
 	}
