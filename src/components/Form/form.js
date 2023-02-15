@@ -45,7 +45,7 @@ const PostIncidentForm = () => {
           <input type="date" id="endDate" value={endDate} onChange={(event) => setEndDate(event.target.value)} required />
         </div>
         <div>
-          <label htmlFor="type">Type de l'incident:</label>
+          <label htmlFor="type">Type de l&apos;incident:</label>
           <select id="type" value={type} onChange={(event) => setType(event.target.value)} required>
             <option value="">Selectionner</option>
             <option value="fire">Infrastructure</option>
