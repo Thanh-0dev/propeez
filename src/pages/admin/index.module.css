@@ -1,0 +1,46 @@
+.layout {
+	display: flex;
+	flex-direction: row;
+}
+
+.content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+	padding: 36px 90px 0 48px;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.type {
+	display: flex;
+	flex-direction: row;
+	column-gap: 80px;
+	font-size: 20px;
+	font-weight: 500;
+	font-family: 'Nunito', sans-serif;
+}
+
+.active {
+	font-weight: bold;
+}
+
+.type > p {
+	cursor: pointer;
+}
+
+.button {
+	padding: 10px 25px;
+	background: #9cbfa7;
+	border-radius: 10px;
+	cursor: pointer;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
+}

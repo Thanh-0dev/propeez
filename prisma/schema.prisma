@@ -62,6 +62,7 @@ model VerificationToken {
 model Category {
   id        String     @id @default(cuid())
   type      String
+  color     String
   incidents Incident[]
 }
 

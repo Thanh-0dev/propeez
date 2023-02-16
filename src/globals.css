@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Space+Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&family=Poppins:wght@400;500&display=swap');
 
 :root {
 }
@@ -51,4 +51,9 @@ button {
 
 textarea {
 	resize: none;
+}
+
+ul,
+li {
+	list-style: none;
 }

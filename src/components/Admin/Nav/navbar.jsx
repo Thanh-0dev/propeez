@@ -1,8 +1,8 @@
 import styles from './navbar.module.css';
-import { useRouter } from 'next/router';
 import ActiveLink from '@/components/Header/ActiveLink/activeLink';
 import Image from 'next/image';
 import { signOut } from 'next-auth/react';
+import Link from 'next/link';
 
 export default function Navbar() {
 	const link = [
@@ -19,6 +19,15 @@ export default function Navbar() {
 			<nav className={`${styles.sidebar}`}>
 				<ul>
 					<div className={styles.top}>
+						<Link href="/">
+							<Image
+								src="/images/logo_white.svg"
+								alt="logo de Propeez"
+								width={160}
+								height={80}
+								className={styles.logo}
+							/>
+						</Link>
 						{link.map((item, id) => {
 							return (
 								<li key={id} className={item.class}>
@@ -46,7 +55,7 @@ export default function Navbar() {
 									width={20}
 									height={20}
 								/>
-								<p>Déconnexion</p>
+								<p className={styles.white}>Déconnexion</p>
 							</div>
 						</li>
 					</div>

@@ -11,7 +11,7 @@ export default function Header() {
 		<header className={styles.header}>
 			<div className={styles.header_container}>
 				<Image
-					src="./logo.svg"
+					src="/images/logo.svg"
 					alt="logo de Propeez"
 					width={120}
 					height={120}

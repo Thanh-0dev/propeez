@@ -3,15 +3,10 @@
 	padding: 30px;
 	width: auto;
 	background-color: #9cbfa7;
-	position: fixed;
-	height: 100%;
-	overflow: auto;
+	height: 100vh;
 }
 
 .sidebar ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -20,6 +15,7 @@
 
 .sidebar li {
 	margin-bottom: 10px;
+	white-space: nowrap;
 }
 
 .sidebar a {
@@ -52,4 +48,22 @@
 	padding: 16px;
 	font-weight: bold;
 	cursor: pointer;
+}
+
+.top {
+	display: flex;
+	flex-direction: column;
+}
+
+.logo {
+	align-self: center;
+}
+
+.bottom {
+	display: flex;
+	flex-direction: row;
+}
+
+.white {
+	color: white;
 }
