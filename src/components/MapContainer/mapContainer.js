@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
+// import prisma from "../../../lib/prisma"
 import InteractiveMap from "./InteractiveMap/map";
 import IncidentContainer from "../IncidentContainer/incidentContainer";
 import Pin from "./InteractiveMap/Pin/pin";
@@ -12,16 +13,17 @@ import styles from "./mapContainer.module.css";
 import data from "./data.json";
 import SearchPlaces from "./SearchPlaces/searchPlaces";
 
-
 export default function MapContainer() {
   const [incidentInfo, setIncidentInfo] = useState(null);
   const [hoverInfo, setHoverInfo] = useState(null);
   const [address, setAddress] = useState(null);
   const [viewport, setViewport] = useState(null);
 
+  const [data, setData] = useState([]);
+
   const latLngData = async () => {
     try {
-      const { lat, lng } = await geocodeByAddress(address?.label)
+      await geocodeByAddress(address?.label)
         .then((results) => getLatLng(results[0]))
         .then(({ lat, lng }) => {
           setViewport({
@@ -44,6 +46,33 @@ export default function MapContainer() {
     address && latLngData();
   }, [address]);
 
+  const fetchData = async () => {
+    try {
+      const response = await fetch("/api/getIncidents", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          latitude: viewport.latitude,
+          longitude: viewport.longitude,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+      setData(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    if (!viewport) {
+      return;
+    }
+    fetchData();
+  }, [viewport]);
+
   const pins = useMemo(
     () =>
       data.map((incident, index) => (
@@ -61,13 +90,17 @@ export default function MapContainer() {
           <Pin active={incident === hoverInfo} />
         </Marker>
       )),
-    [hoverInfo]
+    [hoverInfo, data]
   );
 
   if (viewport) {
     return (
       <>
-        <SearchPlaces address={address} setAddress={setAddress} title={'Rechercher une position'}/>
+        <SearchPlaces
+          address={address}
+          setAddress={setAddress}
+          title={"Rechercher une position"}
+        />
         <div className={styles.map_container}>
           <IncidentContainer
             data={data}
@@ -86,7 +119,5 @@ export default function MapContainer() {
       </>
     );
   }
-  return (
-    <LocationPermission address={address} setAddress={setAddress}/>
-  );
+  return <LocationPermission address={address} setAddress={setAddress} />;
 }
