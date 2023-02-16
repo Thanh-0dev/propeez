@@ -5,7 +5,7 @@ export default function Home() {
 	const { data: session } = useSession();
 
 	if (session) {
-		return <Navbar></Navbar>;
+		return <Navbar />;
 	}
 }
 

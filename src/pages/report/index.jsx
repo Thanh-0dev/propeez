@@ -8,6 +8,7 @@ import prisma from '/lib/prisma';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import fr from 'date-fns/locale/fr';
+import Layout from '@/components/Layout/layout';
 
 export default function Report({ categories }) {
 	const [title, setTitle] = useState('');
@@ -73,7 +74,7 @@ export default function Report({ categories }) {
 	};
 
 	return (
-		<div>
+		<Layout>
 			<form onSubmit={submitData} className={styles.page}>
 				<h1>Upload Image</h1>
 				<input
@@ -199,7 +200,7 @@ export default function Report({ categories }) {
 
 				<input type="submit" value="Upload" />
 			</form>
-		</div>
+		</Layout>
 	);
 }
 
