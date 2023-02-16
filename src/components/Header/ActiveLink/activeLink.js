@@ -23,7 +23,7 @@ const ActiveLink = ({ children, activeClassName, className, ...props }) => {
           : className;
 
       if (newClassName !== computedClassName) {
-        setComputedClassName(activeClassName);
+        setComputedClassName(newClassName);
       }
     }
   }, [
