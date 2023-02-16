@@ -35,7 +35,7 @@ export default function IncidentContainer({
       ) : (
         <>
           <h2 className={styles.title}>
-            <span className={styles.num}>{nIncident}</span> incident{nIncident > 0 && 's'} déclaré{nIncident > 0 && 's'} dans 
+            <span className={styles.num}>{nIncident}</span> incident{nIncident > 1 && 's'} déclaré{nIncident > 1 && 's'} dans 
             votre zone
           </h2>
           <IncidentList
