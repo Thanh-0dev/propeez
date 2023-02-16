@@ -2,7 +2,7 @@ import prisma from '/lib/prisma';
 
 export default async function handle(req, res) {
 	const { latitude, longitude, category } = req.body;
-	const radius = 30;
+	const radius = 10;
 
 	const query =
 		await prisma.$queryRaw`SELECT id FROM "Incident" WHERE ST_DWithin(ST_MakePoint(longitude, latitude), ST_MakePoint(${longitude}, ${latitude})::geography, ${radius} * 1000)`;
