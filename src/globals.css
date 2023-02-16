@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Space+Grotesk&display=swap');
+
 :root {
 }
 
@@ -11,6 +13,8 @@ html,
 body {
 	max-width: 100vw;
 	overflow-x: hidden;
+	background-color: #fffaed;
+	font-family: 'Poppins', sans-serif;
 }
 
 h1,
@@ -22,6 +26,7 @@ h6 {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 100%;
+	font-family: 'Nunito';
 }
 
 a {
