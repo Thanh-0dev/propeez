@@ -1,0 +1,101 @@
+.form_container {
+  background-color: white;
+  padding: 35px;
+  border-radius: 5px;
+  border: 2px #ededed solid;
+  margin-bottom: 50px;
+}
+
+.form_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 35px;
+  border-bottom: 2px solid #ededed;
+}
+
+.report_form {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.report_form label {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-right: 15px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #ededed;
+}
+
+.report_form input,
+.report_form textarea,
+.report_form select {
+  width: 370px;
+  padding: 12px;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #bdbaba;
+}
+
+.report_form textarea {
+  height: 200px;
+}
+
+.report_form .input_search,
+.report_form .date_picker {
+  width: 370px;
+  border-radius: 6px;
+}
+
+.report_form .send_button {
+  cursor: pointer;
+  width: auto;
+  background-color: #9cbfa7;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.submit_info {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.submit_info .error {
+  color: #ed0505;
+}
+
+.submit_info .success {
+  color: #00a100;
+}
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #9cbfa7;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
