@@ -13,10 +13,12 @@ import fr from 'date-fns/locale/fr';
 export default function UploadIncident({ categories }) {
 	const [title, setTitle] = useState('');
 	const [description, setDescription] = useState('');
-	const [address, setAddress] = useState('');
-	const [startDate, setStartDate] = useState(new Date());
+	const [address, setAddress] = useState({});
+	const [startDate, setStartDate] = useState(
+		new Date().toLocaleDateString('fr-FR')
+	);
 	const [endDate, setEndDate] = useState(null);
-	const [category, setCategory] = useState();
+	const [category, setCategory] = useState(categories[0].id);
 
 	const [imageUploaded, setImageUploaded] = useState();
 
@@ -103,20 +105,85 @@ export default function UploadIncident({ categories }) {
 					}}
 				/>
 				<DatePicker
-					onChange={(date) => setStartDate(date)}
-					selected={startDate}
-					startDate={startDate}
-					endDate={endDate}
+					onChange={(date) => {
+						const d = new Date(date).toLocaleDateString('fr-FR');
+						setStartDate(d);
+					}}
+					selected={
+						new Date(
+							startDate.split('/')[1] +
+								' ' +
+								startDate.split('/')[0] +
+								' ' +
+								startDate.split('/')[2]
+						)
+					}
+					startDate={
+						new Date(
+							startDate.split('/')[1] +
+								' ' +
+								startDate.split('/')[0] +
+								' ' +
+								startDate.split('/')[2]
+						)
+					}
+					endDate={
+						endDate &&
+						new Date(
+							endDate?.split('/')[1] +
+								' ' +
+								endDate?.split('/')[0] +
+								' ' +
+								endDate?.split('/')[2]
+						)
+					}
 					minDate={new Date()}
 					locale={fr}
 					dateFormat="dd/MM/yyyy"
 				/>
 				<DatePicker
-					onChange={(date) => setEndDate(date)}
-					selected={endDate}
-					startDate={startDate}
-					endDate={endDate}
-					minDate={startDate}
+					onChange={(date) => {
+						const d = new Date(date).toLocaleDateString('fr-FR');
+						setEndDate(d);
+					}}
+					selected={
+						endDate &&
+						new Date(
+							endDate?.split('/')[1] +
+								' ' +
+								endDate?.split('/')[0] +
+								' ' +
+								endDate?.split('/')[2]
+						)
+					}
+					startDate={
+						new Date(
+							startDate.split('/')[1] +
+								' ' +
+								startDate.split('/')[0] +
+								' ' +
+								startDate.split('/')[2]
+						)
+					}
+					endDate={
+						endDate &&
+						new Date(
+							endDate?.split('/')[1] +
+								' ' +
+								endDate?.split('/')[0] +
+								' ' +
+								endDate?.split('/')[2]
+						)
+					}
+					minDate={
+						new Date(
+							startDate.split('/')[1] +
+								' ' +
+								startDate.split('/')[0] +
+								' ' +
+								startDate.split('/')[2]
+						)
+					}
 					locale={fr}
 					dateFormat="dd/MM/yyyy"
 				/>
