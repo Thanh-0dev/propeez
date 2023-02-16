@@ -1,8 +1,8 @@
 import Navbar from '@/components/Admin/Nav/navbar';
-import { signIn, getSession, useSession } from 'next-auth/react';
+import { getSession, useSession } from 'next-auth/react';
 
 export default function Home() {
-	const { data: session, status } = useSession();
+	const { data: session } = useSession();
 
 	if (session) {
 		return <Navbar></Navbar>;

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Router from 'next/router';
 import GooglePlacesAutocomplete, {
 	getLatLng,
 	geocodeByAddress,
@@ -9,6 +8,7 @@ import prisma from '/lib/prisma';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import fr from 'date-fns/locale/fr';
+import { getSession, useSession } from 'next-auth/react';
 
 export default function Report({ categories }) {
 	const [title, setTitle] = useState('');
@@ -207,6 +207,17 @@ export default function Report({ categories }) {
 
 export async function getServerSideProps(context) {
 	const categories = await prisma.category.findMany();
+
+	const session = await getSession(context);
+
+	if (!session || !(session?.user.role === 'ADMIN')) {
+		return {
+			redirect: {
+				destination: '/api/auth/signin',
+				permanent: false,
+			},
+		};
+	}
 
 	return {
 		props: { categories },

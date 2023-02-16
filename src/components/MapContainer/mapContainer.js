@@ -31,16 +31,6 @@ export default function MapContainer() {
 		}
 	};
 
-	useEffect(() => {
-		navigator.geolocation.getCurrentPosition(function (position) {
-			setViewport({
-				latitude: position.coords.latitude,
-				longitude: position.coords.longitude,
-			});
-		});
-		address && latLngData();
-	}, [address]);
-
 	const fetchData = async () => {
 		try {
 			const response = await fetch('/api/getIncidents', {
@@ -62,9 +52,23 @@ export default function MapContainer() {
 	};
 
 	useEffect(() => {
-		if (!viewport) {
-			return;
-		}
+		navigator.geolocation.getCurrentPosition(function (position) {
+			setViewport({
+				latitude: position.coords.latitude,
+				longitude: position.coords.longitude,
+			});
+		});
+	}, []);
+
+	useEffect(() => {
+		if (!address) return;
+
+		latLngData();
+	}, [address]);
+
+	useEffect(() => {
+		if (!viewport) return;
+
 		fetchData();
 	}, [viewport]);
 
@@ -88,27 +92,27 @@ export default function MapContainer() {
 		[hoverInfo, data]
 	);
 
-  if (viewport) {
-    return (
-      <>
-        <div className={styles.map_container}>
-          <IncidentContainer
-            data={data}
-            incidentInfo={incidentInfo}
-            setIncidentInfo={setIncidentInfo}
-            setHoverInfo={setHoverInfo}
-          />
-          <InteractiveMap
-            data={data}
-            viewport={viewport}
-            pins={pins}
-            address={address}
-            setAddress={setAddress}
-            latLngData={latLngData}
-          />
-        </div>
-      </>
-    );
-  }
-  return <LocationPermission address={address} setAddress={setAddress} />;
+	if (viewport) {
+		return (
+			<>
+				<div className={styles.map_container}>
+					<IncidentContainer
+						data={data}
+						incidentInfo={incidentInfo}
+						setIncidentInfo={setIncidentInfo}
+						setHoverInfo={setHoverInfo}
+					/>
+					<InteractiveMap
+						data={data}
+						viewport={viewport}
+						pins={pins}
+						address={address}
+						setAddress={setAddress}
+						latLngData={latLngData}
+					/>
+				</div>
+			</>
+		);
+	}
+	return <LocationPermission address={address} setAddress={setAddress} />;
 }
