@@ -10,6 +10,8 @@ import GooglePlacesAutocomplete, {
 } from "react-google-places-autocomplete";
 import styles from "./mapContainer.module.css";
 import data from "./data.json";
+import SearchPlaces from "./SearchPlaces/searchPlaces";
+
 
 export default function MapContainer() {
   const [incidentInfo, setIncidentInfo] = useState(null);
@@ -65,19 +67,7 @@ export default function MapContainer() {
   if (viewport) {
     return (
       <>
-        <GooglePlacesAutocomplete
-          apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
-          apiOptions={{ language: "fr", region: "fr" }}
-          autocompletionRequest={{
-            componentRestrictions: {
-              country: "fr",
-            },
-          }}
-          selectProps={{
-            address,
-            onChange: setAddress,
-          }}
-        />
+        <SearchPlaces address={address} setAddress={setAddress} title={'Rechercher une position'}/>
         <div className={styles.map_container}>
           <IncidentContainer
             data={data}
@@ -97,21 +87,6 @@ export default function MapContainer() {
     );
   }
   return (
-    <>
-      <h1>Activer votre géolocalisation ou entrer une position</h1>
-      <GooglePlacesAutocomplete
-        apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
-        apiOptions={{ language: "fr", region: "fr" }}
-        autocompletionRequest={{
-          componentRestrictions: {
-            country: "fr",
-          },
-        }}
-        selectProps={{
-          address,
-          onChange: setAddress,
-        }}
-      />
-    </>
+    <LocationPermission address={address} setAddress={setAddress}/>
   );
 }
