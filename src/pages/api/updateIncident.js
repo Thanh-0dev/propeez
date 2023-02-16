@@ -16,7 +16,7 @@ export default async function handle(req, res) {
 
 	const imageData = await uploadImage(imageUploaded.filepath);
 
-	const result = await prisma.incident.create({
+	const result = await prisma.incident.update({
 		data: {
 			title: incident.title,
 			description: incident.description,
@@ -38,7 +38,7 @@ export default async function handle(req, res) {
 					version: imageData.version.toString(),
 				},
 			},
-			published: true,
+			published: incident.published,
 		},
 	});
 

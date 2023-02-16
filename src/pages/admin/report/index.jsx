@@ -10,7 +10,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import fr from 'date-fns/locale/fr';
 
-export default function UploadIncident({ categories }) {
+export default function Report({ categories }) {
 	const [title, setTitle] = useState('');
 	const [description, setDescription] = useState('');
 	const [address, setAddress] = useState({});
@@ -57,7 +57,6 @@ export default function UploadIncident({ categories }) {
 				startDate,
 				endDate,
 				categoryId: category,
-				published: true,
 			};
 
 			const formData = new FormData();

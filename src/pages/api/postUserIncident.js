@@ -38,7 +38,7 @@ export default async function handle(req, res) {
 					version: imageData.version.toString(),
 				},
 			},
-			published: true,
+			published: false,
 		},
 	});
 
