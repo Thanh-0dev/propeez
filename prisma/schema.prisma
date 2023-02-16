@@ -69,7 +69,7 @@ model Incident {
   id          String    @id @default(cuid())
   title       String
   description String
-  adress      String
+  address     String
   city        String
   startDate   String
   endDate     String?

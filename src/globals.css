@@ -27,19 +27,23 @@ h6 {
 a {
 	text-decoration: none;
 	color: #575757;
-  transition: 0.2s all;
+	transition: 0.2s all;
 }
 
-a:hover{
-  color: #262626;
-  transition: 0.2s all;
+a:hover {
+	color: #262626;
+	transition: 0.2s all;
 }
 
 button {
 	cursor: pointer;
 }
 
-.mapboxgl-popup-content{
+.mapboxgl-popup-content {
 	padding: 15px;
 	font-size: 0.8rem;
+}
+
+textarea {
+	resize: none;
 }
