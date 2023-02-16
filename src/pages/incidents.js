@@ -21,9 +21,17 @@ export default function Test({ incidents }) {
 
 export async function getServerSideProps(context) {
 	let category;
+	let radius = 10000;
+	let latitude = 51.5074;
+	let longitude = 0.1278;
 
+	const query =
+		await prisma.$queryRaw`SELECT id FROM "Incident" WHERE ST_DWithin(ST_MakePoint(longitude, latitude), ST_MakePoint(${longitude}, ${latitude})::geography, ${radius} * 1000)`;
 	const incidents = await prisma.incident.findMany({
 		where: {
+			id: {
+				in: query.map(({ id }) => id),
+			},
 			published: true,
 			...(category ? { category: { type: category } } : {}),
 		},
