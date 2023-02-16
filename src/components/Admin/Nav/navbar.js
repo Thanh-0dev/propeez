@@ -6,11 +6,11 @@ import { signOut } from 'next-auth/react';
 
 export default function Navbar() {
 	const link = [
-		{ name: 'Accueil', icon: './images/home-icon.svg', link: './admin' },
+		{ name: 'Accueil', icon: '/images/home-icon.svg', link: '/admin' },
 		{
 			name: 'Tableau de bord',
-			icon: './images/dashboard-icon.svg',
-			link: './admin/dashboard',
+			icon: '/images/dashboard-icon.svg',
+			link: '#dashboard',
 		},
 	];
 
@@ -41,7 +41,7 @@ export default function Navbar() {
 							<div onClick={() => signOut()} className={styles.logout}>
 								<Image
 									className={styles.image}
-									src="./images/logout-icon.svg"
+									src="/images/logout-icon.svg"
 									alt="Logout icon"
 									width={20}
 									height={20}
