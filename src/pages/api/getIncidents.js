@@ -1,3 +1,5 @@
+import prisma from '/lib/prisma';
+
 export default async function handle(req, res) {
 	const { latitude, longitude, category } = req.body;
 	const radius = 30;
