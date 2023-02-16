@@ -1,9 +1,9 @@
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import styles from "./searchPlaces.module.css";
 
-export default function SearchPlaces({ address, setAddress, title=null }) {
+export default function SearchPlaces({ address, setAddress, title=null, mapPosition=false }) {
   return (
-    <div className={styles.search_places}>
+    <div className={`${styles.search_places} ${mapPosition && styles.search_map}`}>
       {title && <h3 className={styles.title}>Rechercher une position</h3>}
       <GooglePlacesAutocomplete
         apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}

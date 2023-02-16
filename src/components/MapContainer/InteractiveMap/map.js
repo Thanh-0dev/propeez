@@ -6,15 +6,18 @@ import Map, {
   ScaleControl,
   GeolocateControl,
 } from "react-map-gl";
+import SearchPlaces from "../SearchPlaces/searchPlaces";
 
 export default function InteractiveMap({
   pins,
   viewport,
+  address,
+  setAddress,
 }) {
   const mapRef = useRef();
 
   useEffect(() => {
-    if(mapRef.current != undefined){
+    if (mapRef.current != undefined) {
       mapRef.current.flyTo({
         center: [viewport.longitude, viewport.latitude],
         pitch: 0,
@@ -34,21 +37,22 @@ export default function InteractiveMap({
         bearing: 0,
         pitch: 0,
         zoom: 12,
-        maxZoom: 16,
         bearing: 0,
-        pitch: 0,
+        boxZoom: false,
+        dragPan: false,
+        dragRotate: false,
       }}
       style={{ width: "100%" }}
       mapStyle="mapbox://styles/mapbox/streets-v12"
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN}
     >
-      <GeolocateControl
-        position="top-left"
-        positionOptions={{ enableHighAccuracy: true }}
-        trackUserLocation={true}
-      />
       <FullscreenControl position="top-left" />
 
+      <SearchPlaces
+        address={address}
+        setAddress={setAddress}
+        mapPosition={true}
+      />
       {pins}
     </Map>
   );

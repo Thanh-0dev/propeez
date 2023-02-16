@@ -88,31 +88,27 @@ export default function MapContainer() {
 		[hoverInfo, data]
 	);
 
-	if (viewport) {
-		return (
-			<>
-				<SearchPlaces
-					address={address}
-					setAddress={setAddress}
-					title={'Rechercher une position'}
-				/>
-				<div className={styles.map_container}>
-					<IncidentContainer
-						data={data}
-						incidentInfo={incidentInfo}
-						setIncidentInfo={setIncidentInfo}
-						setHoverInfo={setHoverInfo}
-					/>
-					<InteractiveMap
-						data={data}
-						viewport={viewport}
-						pins={pins}
-						address={address}
-						latLngData={latLngData}
-					/>
-				</div>
-			</>
-		);
-	}
-	return <LocationPermission address={address} setAddress={setAddress} />;
+  if (viewport) {
+    return (
+      <>
+        <div className={styles.map_container}>
+          <IncidentContainer
+            data={data}
+            incidentInfo={incidentInfo}
+            setIncidentInfo={setIncidentInfo}
+            setHoverInfo={setHoverInfo}
+          />
+          <InteractiveMap
+            data={data}
+            viewport={viewport}
+            pins={pins}
+            address={address}
+            setAddress={setAddress}
+            latLngData={latLngData}
+          />
+        </div>
+      </>
+    );
+  }
+  return <LocationPermission address={address} setAddress={setAddress} />;
 }
