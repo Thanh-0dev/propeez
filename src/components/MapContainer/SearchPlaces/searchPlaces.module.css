@@ -1,8 +1,16 @@
 .search_places{
   width: 325px;
   margin: 30px 0;
+  font-size: 1rem;
 }
 
 .title{
   margin-bottom: 12px;
+}
+
+.search_map{
+  margin: 0;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }

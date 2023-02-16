@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from "react";
 import InteractiveMap from "./InteractiveMap/map";
 import IncidentContainer from "../IncidentContainer/incidentContainer";
 import Pin from "./InteractiveMap/Pin/pin";
-import LocationPermission from "./LocationPermission/LocationPermission";
+import LocationPermission from "./LocationPermission/locationPermission";
 import { Marker } from "react-map-gl";
 import GooglePlacesAutocomplete, {
   getLatLng,
@@ -11,7 +11,6 @@ import GooglePlacesAutocomplete, {
 } from "react-google-places-autocomplete";
 import styles from "./mapContainer.module.css";
 import data from "./data.json";
-import SearchPlaces from "./SearchPlaces/searchPlaces";
 
 export default function MapContainer() {
   const [incidentInfo, setIncidentInfo] = useState(null);
@@ -96,11 +95,6 @@ export default function MapContainer() {
   if (viewport) {
     return (
       <>
-        <SearchPlaces
-          address={address}
-          setAddress={setAddress}
-          title={"Rechercher une position"}
-        />
         <div className={styles.map_container}>
           <IncidentContainer
             data={data}
@@ -113,6 +107,7 @@ export default function MapContainer() {
             viewport={viewport}
             pins={pins}
             address={address}
+            setAddress={setAddress}
             latLngData={latLngData}
           />
         </div>
