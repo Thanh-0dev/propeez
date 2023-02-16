@@ -6,13 +6,16 @@ import GooglePlacesAutocomplete, {
 } from 'react-google-places-autocomplete';
 import styles from './index.module.css';
 import prisma from '/lib/prisma';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import fr from 'date-fns/locale/fr';
 
 export default function UploadIncident({ categories }) {
-	const [title, setTitle] = useState();
-	const [description, setDescription] = useState();
-	const [address, setAddress] = useState();
-	const [startDate, setStartDate] = useState();
-	const [endDate, setEndDate] = useState();
+	const [title, setTitle] = useState('');
+	const [description, setDescription] = useState('');
+	const [address, setAddress] = useState('');
+	const [startDate, setStartDate] = useState(new Date());
+	const [endDate, setEndDate] = useState(null);
 	const [category, setCategory] = useState();
 
 	const [imageUploaded, setImageUploaded] = useState();
@@ -99,8 +102,24 @@ export default function UploadIncident({ categories }) {
 						onChange: setAddress,
 					}}
 				/>
-				<input type="date" onChange={(e) => setStartDate(e.target.value)} />
-				<input type="date" onChange={(e) => setEndDate(e.target.value)} />
+				<DatePicker
+					onChange={(date) => setStartDate(date)}
+					selected={startDate}
+					startDate={startDate}
+					endDate={endDate}
+					minDate={new Date()}
+					locale={fr}
+					dateFormat="dd/MM/yyyy"
+				/>
+				<DatePicker
+					onChange={(date) => setEndDate(date)}
+					selected={endDate}
+					startDate={startDate}
+					endDate={endDate}
+					minDate={startDate}
+					locale={fr}
+					dateFormat="dd/MM/yyyy"
+				/>
 				<select onChange={(e) => setCategory(e.target.value)}>
 					{categories.map((e, i) => (
 						<option key={i} value={e.id}>
