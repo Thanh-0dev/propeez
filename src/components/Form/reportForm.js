@@ -8,7 +8,7 @@ export default function ReportForm({
 	formTitle,
 	categories,
 	api,
-	incident = {},
+	incident = null,
 }) {
 	const [title, setTitle] = useState(incident ? incident?.title : '');
 	const [description, setDescription] = useState(
