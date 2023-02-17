@@ -13,6 +13,7 @@ import { Marker } from 'react-map-gl';
 import Pin from '@/components/MapContainer/InteractiveMap/Pin/pin';
 import { useMemo } from 'react';
 import Head from 'next/head';
+import prisma from '/lib/prisma';
 
 export default function Admin({ incidents }) {
 	const router = useRouter();
