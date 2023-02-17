@@ -242,13 +242,6 @@ export default function Admin({ incidents }) {
 export async function getServerSideProps({ req }) {
 	const session = await getSession({ req });
 
-	const incidents = await prisma.incident.findMany({
-		include: {
-			image: true,
-			category: true,
-		},
-	});
-
 	if (!session || !(session?.user.role === 'ADMIN')) {
 		return {
 			redirect: {
@@ -257,6 +250,13 @@ export async function getServerSideProps({ req }) {
 			},
 		};
 	}
+
+	const incidents = await prisma.incident.findMany({
+		include: {
+			image: true,
+			category: true,
+		},
+	});
 
 	return {
 		props: { incidents },
