@@ -57,3 +57,8 @@ ul,
 li {
 	list-style: none;
 }
+
+
+#__next{
+	overflow: hidden;
+}
