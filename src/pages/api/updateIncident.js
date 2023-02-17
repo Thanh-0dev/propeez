@@ -1,6 +1,7 @@
 import { getDataForm } from '/lib/formidable';
 import { uploadImage } from '/lib/cloudinary';
 import prisma from '/lib/prisma';
+import { getSession } from 'next-auth/react';
 
 export const config = {
 	api: {
@@ -11,12 +12,21 @@ export const config = {
 export default async function handle(req, res) {
 	const dataForm = await getDataForm(req);
 
-	const incident = JSON.parse(dataForm.fields.incident);
-	const imageUploaded = dataForm.files.image;
+	const session = await getSession({ req });
 
-	const imageData = await uploadImage(imageUploaded.filepath);
+	const incident = JSON.parse(dataForm.fields.incident);
+
+	let imageData;
+
+	if (dataForm?.files?.image) {
+		const imageUploaded = dataForm.files.image;
+		imageData = await uploadImage(imageUploaded.filepath);
+	}
 
 	const result = await prisma.incident.update({
+		where: {
+			id: incident.id,
+		},
 		data: {
 			title: incident.title,
 			description: incident.description,
@@ -31,13 +41,15 @@ export default async function handle(req, res) {
 					id: incident.categoryId,
 				},
 			},
-			image: {
-				create: {
-					publicId: imageData.public_id,
-					format: imageData.format,
-					version: imageData.version.toString(),
+			...(imageData && {
+				image: {
+					create: {
+						publicId: imageData.public_id,
+						format: imageData.format,
+						version: imageData.version.toString(),
+					},
 				},
-			},
+			}),
 			published: incident.published,
 		},
 	});

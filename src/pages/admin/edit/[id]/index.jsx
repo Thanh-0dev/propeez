@@ -6,7 +6,7 @@ import Navbar from '@/components/Admin/Nav/navbar';
 import { getSession } from 'next-auth/react';
 import styles from './index.module.css';
 
-export default function Report({ categories }) {
+export default function Edit({ categories, incident }) {
 	return (
 		<div className={styles.layout}>
 			<Navbar />
@@ -15,15 +15,25 @@ export default function Report({ categories }) {
 				<ReportForm
 					formTitle={'Signaler un incident'}
 					categories={categories}
-					api={'/api/postIncident'}
+					api={'/api/updateIncident'}
+					incident={incident}
 				/>
 			</div>
 		</div>
 	);
 }
 
-export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ req, params }) {
 	const categories = await prisma.category.findMany();
+	const incident = await prisma.incident.findUnique({
+		where: {
+			id: String(params?.id),
+		},
+		include: {
+			image: true,
+			category: true,
+		},
+	});
 
 	const session = await getSession({ req });
 
@@ -37,6 +47,6 @@ export async function getServerSideProps({ req }) {
 	}
 
 	return {
-		props: { categories },
+		props: { categories, incident },
 	};
 }

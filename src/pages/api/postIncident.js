@@ -1,6 +1,7 @@
 import { getDataForm } from '/lib/formidable';
 import { uploadImage } from '/lib/cloudinary';
 import prisma from '/lib/prisma';
+import { getSession } from 'next-auth/react';
 
 export const config = {
 	api: {
@@ -10,6 +11,8 @@ export const config = {
 
 export default async function handle(req, res) {
 	const dataForm = await getDataForm(req);
+
+	const session = await getSession({ req });
 
 	const incident = JSON.parse(dataForm.fields.incident);
 	const imageUploaded = dataForm.files.image;

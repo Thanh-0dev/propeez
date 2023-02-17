@@ -4,6 +4,7 @@
 	width: auto;
 	background-color: #9cbfa7;
 	height: 100vh;
+	position: fixed;
 }
 
 .sidebar ul {

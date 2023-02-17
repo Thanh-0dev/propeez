@@ -6,7 +6,6 @@ import LocationPermission from './LocationPermission/locationPermission';
 import { Marker } from 'react-map-gl';
 import { getLatLng, geocodeByAddress } from 'react-google-places-autocomplete';
 import styles from './mapContainer.module.css';
-import SearchPlaces from './SearchPlaces/searchPlaces';
 
 export default function MapContainer() {
 	const [incidentInfo, setIncidentInfo] = useState(null);
@@ -44,7 +43,6 @@ export default function MapContainer() {
 				}),
 			});
 			const data = await response.json();
-			console.log(data);
 			setData(data);
 		} catch (error) {
 			console.error(error);

@@ -1,22 +1,24 @@
-.incident_item{
-  border: 2px #ededed solid;
-  border-radius: 5px 0px 0px 5px;
-  padding: 25px;
-  cursor: pointer;
-  transition: 0.2s all ease-in;
+.incident_item {
+	border: 2px #ededed solid;
+	border-radius: 5px 0px 0px 5px;
+	padding: 25px;
+	cursor: pointer;
+	transition: 0.2s all ease-in;
+	display: flex;
+	flex-direction: column;
 }
 
-.incident_item:hover{
-  background-color: #ededed;
-  transition: 0.2s all ease-in;
+.incident_item:hover {
+	background-color: #ededed;
+	transition: 0.2s all ease-in;
 }
 
-.title{
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+.title {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 20px;
 }
 
-.incident_item *:not(:first-child, :last-child){
-  margin-bottom: 10px;
+.incident_item *:not(:first-child, :last-child) {
+	margin-bottom: 10px;
 }
