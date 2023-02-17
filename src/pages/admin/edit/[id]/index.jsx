@@ -8,18 +8,23 @@ import styles from './index.module.css';
 
 export default function Edit({ categories, incident }) {
 	return (
-		<div className={styles.layout}>
-			<Navbar />
-			<div style={{ width: '320px' }}></div>
-			<div className={styles.form}>
-				<ReportForm
-					formTitle={'Signaler un incident'}
-					categories={categories}
-					api={'/api/updateIncident'}
-					incident={incident}
-				/>
+		<>
+			<Head>
+				<title>Modifier un incident - Propeez</title>
+			</Head>
+			<div className={styles.layout}>
+				<Navbar />
+				<div style={{ width: '320px' }}></div>
+				<div className={styles.form}>
+					<ReportForm
+						formTitle={'Signaler un incident'}
+						categories={categories}
+						api={'/api/updateIncident'}
+						incident={incident}
+					/>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 

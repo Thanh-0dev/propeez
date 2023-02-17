@@ -8,17 +8,22 @@ import styles from './index.module.css';
 
 export default function Report({ categories }) {
 	return (
-		<div className={styles.layout}>
-			<Navbar />
-			<div style={{ width: '320px' }}></div>
-			<div className={styles.form}>
-				<ReportForm
-					formTitle={'Signaler un incident'}
-					categories={categories}
-					api={'/api/postIncident'}
-				/>
+		<>
+			<Head>
+				<title>Signaler un incident - Propeez</title>
+			</Head>
+			<div className={styles.layout}>
+				<Navbar />
+				<div style={{ width: '320px' }}></div>
+				<div className={styles.form}>
+					<ReportForm
+						formTitle={'Signaler un incident'}
+						categories={categories}
+						api={'/api/postIncident'}
+					/>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 
