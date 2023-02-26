@@ -7,6 +7,9 @@
    <p align="center">
      Communication Platform for Municipal Government
    </p>
+   <a targer='_blank' href='https://propeez.vercel.app/' align="center">
+     https://propeez.vercel.app/
+   </a>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -23,7 +26,7 @@
 
 ## About The Project
 
-Propeez is a web application that helps cities manage incidents more efficiently. Users can report incidents, which are then stored in a database and managed by the municipal government through a back office dashboard. The application also features an interactive map with geolocation, and a REST API for integration with other systems.
+Propeez is a web application that helps cities manage incidents more efficiently. Users can report incidents, which are then stored in a database and managed by the municipal government through a back office dashboard. The application also features an interactive map with geolocation, and a node API for integration with other systems.
 
 ![image](https://user-images.githubusercontent.com/71853052/219608413-a750fe23-1fbf-4fb8-9745-62e444a7f779.png)
 
@@ -32,7 +35,7 @@ Propeez is a web application that helps cities manage incidents more efficiently
 - Database: Store all the information about the incidents.
 - Back office dashboard (CRUD) to manage incidents.
 - Users can report incidents
-- Rest API
+- Node API
 
 ## 🛠️ Tech Stack
 
@@ -43,6 +46,7 @@ Propeez is a web application that helps cities manage incidents more efficiently
 - [Vercel](https://vercel.com/)
 - [Mapbox](https://www.mapbox.com/)
 - [Postgresql](https://www.postgresql.org/)
+- [Supabase](https://app.supabase.com/)
 
 # 🚀 Getting Started
 
@@ -65,7 +69,7 @@ Contributions are welcome! If you'd like to contribute to Propeez, please follow
 
 ## Authors
 
-- [@reaSlyn](https://github.com/reaSlyn)
+- [@ReaSlyn](https://github.com/ReaSlyn)
 - [@MaximePETIT-code](https://www.github.com/MaximePETIT-code)
 - [@agahakan](https://www.github.com/agahakan)
         
