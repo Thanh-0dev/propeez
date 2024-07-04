@@ -52,7 +52,7 @@ Propeez is a web application that helps cities manage incidents more efficiently
 
 To get started with Propeez, follow these steps:
 
-1. Clone the repository: git clone https://github.com/ReaSlyn/propeez.git
+1. Clone the repository
 2. Install dependencies: npm install
 3. Create a .env file and add your environment variables (see .env.example for reference)
 4. Start the development server: npm run dev
